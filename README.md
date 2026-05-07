@@ -2,6 +2,14 @@
 
 A desktop application built with **PyQt5** and **Flask** that automates data cleaning, profiling, and preprocessing for CSV and tabular datasets — giving you actionable quality reports without writing a single line of code.
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10.0-blue?logo=python&logoColor=white"/>
+  <img src="https://img.shields.io/badge/PyQt5-5.15.9-green?logo=qt&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Flask-3.x-black?logo=flask&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Numpy-777BB4?logo=numpy&logoColor=white"/>
+  <img src="https://img.shields.io/badge/-Pandas-333333?style=flat&logo=pandas"/>
+</p>
+
 ---
 
 ## 📌 Table of Contents
