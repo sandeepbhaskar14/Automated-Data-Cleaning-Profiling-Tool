@@ -2587,6 +2587,12 @@ QPushButton:hover{
                               <height>240</height>
                              </size>
                             </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>280</height>
+                             </size>
+                            </property>
                             <property name="styleSheet">
                              <string notr="true">QFrame#frame_62{
 	border:1px solid rgb(214, 214, 214);
@@ -2614,6 +2620,10 @@ QPushButton:hover{
                              </property>
                              <item>
                               <widget class="QFrame" name="frame_51">
+                               <property name="styleSheet">
+                                <string notr="true">border:none;
+border-radius:10px;</string>
+                               </property>
                                <property name="frameShape">
                                 <enum>QFrame::StyledPanel</enum>
                                </property>
@@ -2634,7 +2644,7 @@ QPushButton:hover{
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../../assets/icons/data-cleansing.png</normaloff>../../assets/icons/data-cleansing.png</iconset>
+                                    <normaloff>../assets/icons/data-cleansing.png</normaloff>../assets/icons/data-cleansing.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
@@ -2654,6 +2664,10 @@ QPushButton:hover{
                                  <width>0</width>
                                  <height>0</height>
                                 </size>
+                               </property>
+                               <property name="styleSheet">
+                                <string notr="true">border:none;
+border-radius:10px;</string>
                                </property>
                                <property name="frameShape">
                                 <enum>QFrame::StyledPanel</enum>
@@ -2735,6 +2749,12 @@ QPushButton:hover{
                               <height>240</height>
                              </size>
                             </property>
+                            <property name="maximumSize">
+                             <size>
+                              <width>16777215</width>
+                              <height>300</height>
+                             </size>
+                            </property>
                             <property name="styleSheet">
                              <string notr="true"/>
                             </property>
@@ -2745,6 +2765,9 @@ QPushButton:hover{
                              <enum>QFrame::Raised</enum>
                             </property>
                             <layout class="QHBoxLayout" name="horizontalLayout_34">
+                             <property name="spacing">
+                              <number>7</number>
+                             </property>
                              <property name="leftMargin">
                               <number>0</number>
                              </property>
@@ -2772,15 +2795,30 @@ QPushButton:hover{
                                 <enum>QFrame::Raised</enum>
                                </property>
                                <layout class="QVBoxLayout" name="verticalLayout_25">
+                                <property name="spacing">
+                                 <number>8</number>
+                                </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
                                 <property name="topMargin">
-                                 <number>5</number>
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
                                 </property>
                                 <item>
                                  <widget class="QLabel" name="label_7">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>35</height>
+                                   </size>
+                                  </property>
                                   <property name="maximumSize">
                                    <size>
                                     <width>16777215</width>
-                                    <height>30</height>
+                                    <height>35</height>
                                    </size>
                                   </property>
                                   <property name="font">
@@ -2790,7 +2828,11 @@ QPushButton:hover{
                                    </font>
                                   </property>
                                   <property name="styleSheet">
-                                   <string notr="true"/>
+                                   <string notr="true">background-color: rgb(238, 238, 238);
+border-top-left-radius:10px;
+border-top-right-radius:10px;
+border-bottom-right-radius:0px;
+padding-left:20px;</string>
                                   </property>
                                   <property name="text">
                                    <string>Key Features</string>
@@ -2799,6 +2841,12 @@ QPushButton:hover{
                                 </item>
                                 <item>
                                  <widget class="QPushButton" name="pushButton_4">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>25</height>
+                                   </size>
+                                  </property>
                                   <property name="font">
                                    <font>
                                     <family>Roboto</family>
@@ -2816,6 +2864,12 @@ QPushButton:hover{
                                 </item>
                                 <item>
                                  <widget class="QPushButton" name="pushButton_6">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>25</height>
+                                   </size>
+                                  </property>
                                   <property name="font">
                                    <font>
                                     <family>Roboto</family>
@@ -2833,6 +2887,12 @@ QPushButton:hover{
                                 </item>
                                 <item>
                                  <widget class="QPushButton" name="pushButton_5">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>25</height>
+                                   </size>
+                                  </property>
                                   <property name="font">
                                    <font>
                                     <family>Roboto</family>
@@ -2850,6 +2910,12 @@ QPushButton:hover{
                                 </item>
                                 <item>
                                  <widget class="QPushButton" name="pushButton_7">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>25</height>
+                                   </size>
+                                  </property>
                                   <property name="font">
                                    <font>
                                     <family>Roboto</family>
@@ -2867,6 +2933,12 @@ QPushButton:hover{
                                 </item>
                                 <item>
                                  <widget class="QPushButton" name="pushButton_8">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>25</height>
+                                   </size>
+                                  </property>
                                   <property name="font">
                                    <font>
                                     <family>Roboto</family>
@@ -2884,6 +2956,12 @@ QPushButton:hover{
                                 </item>
                                 <item>
                                  <widget class="QPushButton" name="pushButton_9">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>25</height>
+                                   </size>
+                                  </property>
                                   <property name="font">
                                    <font>
                                     <family>Roboto</family>
@@ -2896,6 +2974,22 @@ QPushButton:hover{
                                   <property name="icon">
                                    <iconset>
                                     <normaloff>../../assets/icons/check.png</normaloff>../../assets/icons/check.png</iconset>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_68">
+                                  <property name="maximumSize">
+                                   <size>
+                                    <width>16777215</width>
+                                    <height>16777215</height>
+                                   </size>
+                                  </property>
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
                                   </property>
                                  </widget>
                                 </item>
@@ -2920,15 +3014,27 @@ QPushButton:hover{
                                 <property name="spacing">
                                  <number>5</number>
                                 </property>
+                                <property name="leftMargin">
+                                 <number>0</number>
+                                </property>
                                 <property name="topMargin">
-                                 <number>10</number>
+                                 <number>0</number>
+                                </property>
+                                <property name="rightMargin">
+                                 <number>0</number>
                                 </property>
                                 <item>
                                  <widget class="QLabel" name="label_8">
+                                  <property name="minimumSize">
+                                   <size>
+                                    <width>0</width>
+                                    <height>35</height>
+                                   </size>
+                                  </property>
                                   <property name="maximumSize">
                                    <size>
                                     <width>16777215</width>
-                                    <height>30</height>
+                                    <height>35</height>
                                    </size>
                                   </property>
                                   <property name="font">
@@ -2937,8 +3043,25 @@ QPushButton:hover{
                                     <pointsize>12</pointsize>
                                    </font>
                                   </property>
+                                  <property name="styleSheet">
+                                   <string notr="true">background-color: rgb(238, 238, 238);
+border-top-left-radius:10px;
+border-top-right-radius:10px;
+border-bottom-right-radius:0px;
+padding-left:20px;</string>
+                                  </property>
                                   <property name="text">
                                    <string>Tech Stack</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_70">
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
                                   </property>
                                  </widget>
                                 </item>
@@ -2961,12 +3084,12 @@ QPushButton:hover{
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../../assets/icons/python.png</normaloff>../../assets/icons/python.png</iconset>
+                                    <normaloff>../assets/icons/python.png</normaloff>../assets/icons/python.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
-                                    <width>25</width>
-                                    <height>25</height>
+                                    <width>28</width>
+                                    <height>28</height>
                                    </size>
                                   </property>
                                  </widget>
@@ -2990,12 +3113,12 @@ QPushButton:hover{
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../../assets/icons/flask.png</normaloff>../../assets/icons/flask.png</iconset>
+                                    <normaloff>../assets/icons/flask.png</normaloff>../assets/icons/flask.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
-                                    <width>25</width>
-                                    <height>25</height>
+                                    <width>28</width>
+                                    <height>28</height>
                                    </size>
                                   </property>
                                  </widget>
@@ -3019,12 +3142,12 @@ QPushButton:hover{
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../../assets/icons/Qt.png</normaloff>../../assets/icons/Qt.png</iconset>
+                                    <normaloff>../assets/icons/Qt.png</normaloff>../assets/icons/Qt.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
-                                    <width>25</width>
-                                    <height>25</height>
+                                    <width>28</width>
+                                    <height>28</height>
                                    </size>
                                   </property>
                                  </widget>
@@ -3048,12 +3171,12 @@ QPushButton:hover{
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../../assets/icons/pandas.png</normaloff>../../assets/icons/pandas.png</iconset>
+                                    <normaloff>../assets/icons/pandas.png</normaloff>../assets/icons/pandas.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
-                                    <width>25</width>
-                                    <height>25</height>
+                                    <width>28</width>
+                                    <height>28</height>
                                    </size>
                                   </property>
                                  </widget>
@@ -3077,12 +3200,12 @@ QPushButton:hover{
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../../assets/icons/numpy.png</normaloff>../../assets/icons/numpy.png</iconset>
+                                    <normaloff>../assets/icons/numpy.png</normaloff>../assets/icons/numpy.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
-                                    <width>25</width>
-                                    <height>25</height>
+                                    <width>28</width>
+                                    <height>28</height>
                                    </size>
                                   </property>
                                  </widget>
@@ -3106,13 +3229,23 @@ QPushButton:hover{
                                   </property>
                                   <property name="icon">
                                    <iconset>
-                                    <normaloff>../../assets/icons/matplotlib.png</normaloff>../../assets/icons/matplotlib.png</iconset>
+                                    <normaloff>../assets/icons/matplotlib.png</normaloff>../assets/icons/matplotlib.png</iconset>
                                   </property>
                                   <property name="iconSize">
                                    <size>
-                                    <width>25</width>
-                                    <height>25</height>
+                                    <width>28</width>
+                                    <height>28</height>
                                    </size>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QFrame" name="frame_69">
+                                  <property name="frameShape">
+                                   <enum>QFrame::StyledPanel</enum>
+                                  </property>
+                                  <property name="frameShadow">
+                                   <enum>QFrame::Raised</enum>
                                   </property>
                                  </widget>
                                 </item>
@@ -3159,7 +3292,7 @@ QPushButton:hover{
                                </property>
                                <property name="icon">
                                 <iconset>
-                                 <normaloff>../../assets/icons/info.png</normaloff>../../assets/icons/info.png</iconset>
+                                 <normaloff>../assets/icons/info.png</normaloff>../assets/icons/info.png</iconset>
                                </property>
                                <property name="iconSize">
                                 <size>
@@ -3222,7 +3355,7 @@ QPushButton:hover{
                                </property>
                                <property name="icon">
                                 <iconset>
-                                 <normaloff>../../assets/icons/mail.png</normaloff>../../assets/icons/mail.png</iconset>
+                                 <normaloff>../assets/icons/mail.png</normaloff>../assets/icons/mail.png</iconset>
                                </property>
                                <property name="iconSize">
                                 <size>
@@ -3240,7 +3373,7 @@ QPushButton:hover{
                             <property name="maximumSize">
                              <size>
                               <width>16777215</width>
-                              <height>50</height>
+                              <height>16777215</height>
                              </size>
                             </property>
                             <property name="frameShape">

@@ -1,0 +1,14 @@
+Testings/
+testing models/
+**/__pycache__/
+Temp/
+new/
+static/
+instance/
+auth_token.x
+*.pyc
+/Backend/core/.env
+source.txt
+**/.venv/
+**/venv/
+**/.env
