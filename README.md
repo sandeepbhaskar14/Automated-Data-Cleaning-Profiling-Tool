@@ -231,12 +231,6 @@ For questions or feedback, reach out at **san767bhbaskar@gmail.com**
 
 ---
 
-## 📄 License
-
-This project is licensed under the [MIT License](LICENSE).
-
----
-
 <p align="center">
   Built with ❤️ using Python, PyQt5 and Flask
 </p>
