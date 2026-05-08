@@ -1,25 +1,24 @@
-# ── Core Data ─────────────────────────────────────────────────────────────────
+# ── Web framework ─────────────────────────────────────────────────────────────
+flask==3.0.3
+flask-cors==4.0.1
+
+# ── Data processing ───────────────────────────────────────────────────────────
 pandas==2.2.2
 numpy==1.26.4
 scipy==1.13.0
 
-# ── Flask API ──────────────────────────────────────────────────────────────────
-flask==3.0.3
-flask-cors==4.0.1
+# ── File-format support ───────────────────────────────────────────────────────
+openpyxl==3.1.2        # Excel .xlsx read/write
+xlrd==2.0.1            # Excel .xls (legacy) read
+chardet==5.2.0         # Encoding detection for CSV / TSV / JSON
+pyarrow==16.1.0        # Parquet read/write (fastest engine)
 
-# ── PyQt5 GUI ──────────────────────────────────────────────────────────────────
-PyQt5==5.15.10
-PyQt5-Qt5==5.15.2
-PyQt5-sip==12.13.0
-
-# ── Charts / Visualisation ────────────────────────────────────────────────────
-matplotlib==3.9.0
-
-# ── Report Generation ─────────────────────────────────────────────────────────
+# ── Report generation ─────────────────────────────────────────────────────────
 reportlab==4.2.2
 Jinja2==3.1.4
 
 # ── Utilities ─────────────────────────────────────────────────────────────────
-termcolor==2.4.0
 python-dotenv==1.0.1
-requests==2.32.3
+
+# ── Production WSGI server (optional, not needed for dev) ────────────────────
+gunicorn==22.0.0
