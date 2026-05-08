@@ -47,3 +47,7 @@
 2026-05-08 10:44:04  INFO      werkzeug  —   * Debugger PIN: 243-541-449
 2026-05-08 10:46:38  INFO      werkzeug  —   * Detected change in 'D:\\Subject\\Python\\PyQT Projects\\Automated Data Cleaning & Profiling Tool\\Backend\\api\\blueprints\\clean.py', reloading
 2026-05-08 10:46:38  INFO      werkzeug  —   * Restarting with stat
+2026-05-08 10:46:39  INFO      api.app  —  Flask app v1.0.0 — 5 blueprints registered
+2026-05-08 10:46:39  INFO      __main__  —  Backend starting  http://0.0.0.0:5050  (debug=False)
+2026-05-08 10:46:39  WARNING   werkzeug  —   * Debugger is active!
+2026-05-08 10:46:39  INFO      werkzeug  —   * Debugger PIN: 243-541-449

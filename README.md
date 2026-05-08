@@ -205,7 +205,17 @@ The desktop window will open. The frontend automatically connects to `http://127
 
 ## 🖼️ Screenshots
 
-> _Add screenshots of the Home, Dashboard, Cleaning, and Report pages here._
+### Home Page
+ ![Alt text](assets/screenshots/Screenshot-1.png)
+
+### Dashboard Page
+ ![Alt text](assets/screenshots/Screenshot-2.png)
+
+### About Page
+![Alt text](assets/screenshots/Screenshot-3.png)
+
+### Settings Page
+![Alt text](assets/screenshots/Screenshot-4.png)
 
 ---
 
