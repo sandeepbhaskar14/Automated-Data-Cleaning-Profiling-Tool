@@ -33,7 +33,7 @@ from config.settings import (
     DUPLICATE_KEEP,
 )
 
-log      = get_logger(__name__)
+log = get_logger(__name__)
 clean_bp = Blueprint("clean", __name__)
 
 
