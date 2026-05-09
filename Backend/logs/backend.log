@@ -1,0 +1,24 @@
+2026-05-09 09:03:26  INFO      api.app  —  Flask app v1.0.0 — 5 blueprints registered
+2026-05-09 09:03:26  INFO      __main__  —  Backend starting  http://0.0.0.0:5050  (debug=True)
+2026-05-09 09:03:27  INFO      werkzeug  —  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.169.114.9:5050
+2026-05-09 09:03:27  INFO      werkzeug  —  [33mPress CTRL+C to quit[0m
+2026-05-09 09:03:27  INFO      werkzeug  —   * Restarting with stat
+2026-05-09 09:03:28  INFO      api.app  —  Flask app v1.0.0 — 5 blueprints registered
+2026-05-09 09:03:28  INFO      __main__  —  Backend starting  http://0.0.0.0:5050  (debug=True)
+2026-05-09 09:03:28  WARNING   werkzeug  —   * Debugger is active!
+2026-05-09 09:03:28  INFO      werkzeug  —   * Debugger PIN: 243-541-449
+2026-05-09 09:18:59  INFO      api.app  —  Flask app v1.0.0 — 5 blueprints registered
+2026-05-09 09:18:59  INFO      __main__  —  Backend starting  http://0.0.0.0:5050  (debug=True)
+2026-05-09 09:18:59  INFO      werkzeug  —  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5050
+ * Running on http://10.169.114.9:5050
+2026-05-09 09:18:59  INFO      werkzeug  —  [33mPress CTRL+C to quit[0m
+2026-05-09 09:18:59  INFO      werkzeug  —   * Restarting with stat
+2026-05-09 09:19:00  INFO      api.app  —  Flask app v1.0.0 — 5 blueprints registered
+2026-05-09 09:19:00  INFO      __main__  —  Backend starting  http://0.0.0.0:5050  (debug=True)
+2026-05-09 09:19:00  WARNING   werkzeug  —   * Debugger is active!
+2026-05-09 09:19:00  INFO      werkzeug  —   * Debugger PIN: 243-541-449

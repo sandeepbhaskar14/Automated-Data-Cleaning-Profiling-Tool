@@ -24,7 +24,7 @@ load_dotenv(BASE_DIR / ".env")
 # ── Flask ──────────────────────────────────────────────────────────────────────
 FLASK_HOST  = os.getenv("FLASK_HOST",  "0.0.0.0")   # 0.0.0.0 for deployed servers
 FLASK_PORT  = int(os.getenv("FLASK_PORT", "5050"))
-FLASK_DEBUG = os.getenv("FLASK_DEBUG", "false").lower() == "true"
+FLASK_DEBUG = os.getenv("FLASK_DEBUG", "true").lower() == "true"
 SECRET_KEY  = os.getenv("SECRET_KEY",  "dev-secret-change-in-prod")
 
 # CORS — which origins are allowed to call the API

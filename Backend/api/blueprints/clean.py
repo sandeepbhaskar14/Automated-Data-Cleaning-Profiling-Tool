@@ -1,7 +1,6 @@
 """
 backend/api/blueprints/clean.py
 ────────────────────────────────
-Phase 3 — full cleaning API
 
 Endpoints
 ─────────
@@ -44,7 +43,7 @@ from flask import Blueprint, jsonify, request
 
 from core.logger  import get_logger
 from core.session import session_store
-from core         import cleaner
+from core import cleaner
 from config.settings import (
     MISSING_VALUE_STRATEGY,
     OUTLIER_METHOD,

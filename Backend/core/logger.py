@@ -51,7 +51,7 @@ def _configure_root():
     root.addHandler(ch)
 
     fh = logging.handlers.RotatingFileHandler(
-        filename=LOG_DIR / "frontend.log",
+        filename=LOG_DIR / "backend.log",
         maxBytes=LOG_MAX_BYTES,
         backupCount=LOG_BACKUP_COUNT,
         encoding="utf-8",

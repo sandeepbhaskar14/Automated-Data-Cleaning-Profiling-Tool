@@ -24,8 +24,6 @@ def create_app() -> Flask:
     app.config["SECRET_KEY"]     = SECRET_KEY
     app.config["DEBUG"]          = FLASK_DEBUG
     app.config["JSON_SORT_KEYS"] = False
-    
-    print(colored(app.url_map, 'green'))
 
     # CORS — configurable per environment
     CORS(app, resources={r"/api/*": {"origins": CORS_ORIGINS}})
@@ -42,6 +40,8 @@ def create_app() -> Flask:
     app.register_blueprint(clean_bp,   url_prefix="/api/clean")
     app.register_blueprint(profile_bp, url_prefix="/api/profile")
     app.register_blueprint(report_bp,  url_prefix="/api/report")
+    
+    print(colored(app.url_map, 'green'))
 
     log.info("Flask app v%s — 5 blueprints registered", APP_VERSION)
     return app
