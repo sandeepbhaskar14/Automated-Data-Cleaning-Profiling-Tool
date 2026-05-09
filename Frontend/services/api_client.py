@@ -4,15 +4,6 @@ frontend/services/api_client.py
 The one and only place the frontend makes HTTP calls to the backend.
 
 All other frontend code imports from here — no raw `requests` calls elsewhere.
-
-Usage
------
-    from services.api_client import ApiClient
-    client = ApiClient()
-
-    ok, data = client.health()
-    ok, data = client.upload_dataset("/path/to/data.csv")
-    ok, data = client.dataset_info(dataset_id)
 """
 
 import requests
@@ -24,24 +15,17 @@ from services.logger import get_logger
 log = get_logger(__name__)
 
 
-class ApiError(Exception):
-    """Raised when the backend returns an unexpected status or is unreachable."""
-
-
 class ApiClient:
     """
     Thin wrapper around the backend REST API.
-
-    Every method returns a tuple: (success: bool, payload: dict).
-    On network failure or non-2xx response the tuple is (False, {"error": ...}).
+    Every method returns (success: bool, payload: dict).
     """
 
     def __init__(self, base_url: str = API_BASE_URL, timeout: int = API_TIMEOUT_SEC):
-        self._base  = base_url.rstrip("/")
+        self._base    = base_url.rstrip("/")
         self._timeout = timeout
-        log.debug("ApiClient configured — base=%s  timeout=%ds", self._base, self._timeout)
 
-    # ── internal helpers ─────────────────────────────────────────────────────
+    # ── HTTP primitives ───────────────────────────────────────────────────────
 
     def _get(self, path: str) -> tuple[bool, dict]:
         url = f"{self._base}{path}"
@@ -79,18 +63,17 @@ class ApiClient:
         except ValueError:
             payload = {"raw": response.text}
         if not success:
-            log.warning("Backend returned HTTP %d: %s", response.status_code, payload)
+            log.warning("Backend HTTP %d: %s", response.status_code, payload)
         return success, payload
 
-    # ── public API ────────────────────────────────────────────────────────────
+    # ── Health ────────────────────────────────────────────────────────────────
 
     def health(self) -> tuple[bool, dict]:
-        """GET /api/health/ — liveness probe."""
         return self._get("/api/health/")
 
-    # Dataset
+    # ── Dataset ───────────────────────────────────────────────────────────────
+
     def upload_dataset(self, file_path: str | Path) -> tuple[bool, dict]:
-        """POST /api/dataset/upload — stream a file to the backend."""
         path = Path(file_path)
         with path.open("rb") as fh:
             return self._post("/api/dataset/upload", files={"file": (path.name, fh)})
@@ -101,23 +84,60 @@ class ApiClient:
     def delete_dataset(self, dataset_id: str) -> tuple[bool, dict]:
         return self._delete(f"/api/dataset/{dataset_id}")
 
-    # Cleaning
-    def clean_missing(self, dataset_id: str, strategy: str = "mean") -> tuple[bool, dict]:
-        return self._post(f"/api/clean/{dataset_id}/missing", json={"strategy": strategy})
+    # ── Cleaning ──────────────────────────────────────────────────────────────
 
-    def clean_duplicates(self, dataset_id: str) -> tuple[bool, dict]:
-        return self._post(f"/api/clean/{dataset_id}/duplicates")
+    def clean_missing(self, dataset_id: str,
+                      strategy: str = "mean") -> tuple[bool, dict]:
+        return self._post(f"/api/clean/{dataset_id}/missing",
+                          json={"strategy": strategy})
 
-    def clean_outliers(self, dataset_id: str, method: str = "iqr") -> tuple[bool, dict]:
-        return self._post(f"/api/clean/{dataset_id}/outliers", json={"method": method})
+    def clean_missing_cols(self, dataset_id: str,
+                           threshold: float = 0.50) -> tuple[bool, dict]:
+        return self._post(f"/api/clean/{dataset_id}/missing_cols",
+                          json={"threshold": threshold})
+
+    def clean_duplicates(self, dataset_id: str,
+                         keep: str = "first",
+                         subset: list[str] | None = None) -> tuple[bool, dict]:
+        body: dict = {"keep": keep}
+        if subset:
+            body["subset"] = subset
+        return self._post(f"/api/clean/{dataset_id}/duplicates", json=body)
+
+    def clean_outliers(self, dataset_id: str,
+                       method: str = "iqr",
+                       threshold: float = 1.5,
+                       action: str = "clip",
+                       columns: list[str] | None = None) -> tuple[bool, dict]:
+        body: dict = {"method": method, "threshold": threshold, "action": action}
+        if columns:
+            body["columns"] = columns
+        return self._post(f"/api/clean/{dataset_id}/outliers", json=body)
 
     def clean_types(self, dataset_id: str) -> tuple[bool, dict]:
         return self._post(f"/api/clean/{dataset_id}/types")
 
-    def clean_all(self, dataset_id: str) -> tuple[bool, dict]:
-        return self._post(f"/api/clean/{dataset_id}/run_all")
+    def clean_normalize(self, dataset_id: str,
+                        columns: list[str] | None = None,
+                        ops: list[str] | None = None) -> tuple[bool, dict]:
+        body: dict = {}
+        if columns:
+            body["columns"] = columns
+        if ops:
+            body["ops"] = ops
+        return self._post(f"/api/clean/{dataset_id}/normalize", json=body)
 
-    # Profiling
+    def clean_pipeline(self, dataset_id: str,
+                       steps: list[dict]) -> tuple[bool, dict]:
+        return self._post(f"/api/clean/{dataset_id}/pipeline",
+                          json={"steps": steps})
+
+    def clean_all(self, dataset_id: str,
+                  **kwargs) -> tuple[bool, dict]:
+        return self._post(f"/api/clean/{dataset_id}/run_all", json=kwargs)
+
+    # ── Profiling ─────────────────────────────────────────────────────────────
+
     def profile_summary(self, dataset_id: str) -> tuple[bool, dict]:
         return self._get(f"/api/profile/{dataset_id}/summary")
 
@@ -127,7 +147,8 @@ class ApiClient:
     def profile_quality(self, dataset_id: str) -> tuple[bool, dict]:
         return self._get(f"/api/profile/{dataset_id}/quality")
 
-    # Reports
+    # ── Reports ───────────────────────────────────────────────────────────────
+
     def generate_report(self, dataset_id: str) -> tuple[bool, dict]:
         return self._post(f"/api/report/{dataset_id}/generate")
 
